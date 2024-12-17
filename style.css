@@ -1,0 +1,193 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #121212 url('images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #ffffff;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    z-index: 1000;
+    padding: 20px 0;
+    text-align: center;
+    transition: transform 0.5s ease-in-out;
+    transform: translateY(-100%);
+}
+
+header.open {
+    transform: translateY(0);
+}
+
+header .container {
+    opacity: 0; /* Awalnya tersembunyi */
+    transition: opacity 0.5s ease-in-out; /* Animasi transisi */
+}
+
+header.open .container {
+    opacity: 1; /* Teks muncul setelah header terbuka */
+}
+
+header h1 {
+    font-size: 2.5rem;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+header .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    margin: 10px 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #00bcd4;
+}
+
+/* Animation Button */
+.menu-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ffa500;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    border-radius: 5px;
+    z-index: 1100;
+}
+
+.menu-toggle:hover {
+    background-color: #ff7b00;
+}
+
+/* Sections */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* About Section */
+#about img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    animation: slideIn 1s ease-out;
+}
+
+#about .text {
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Projects Section */
+.project-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.project {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.project:hover {
+    transform: scale(1.1);
+}
+
+/* Contact Section */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form input, form textarea, form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+form button {
+    background: #00bcd4;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+form button:hover {
+    background: #0097a7;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
